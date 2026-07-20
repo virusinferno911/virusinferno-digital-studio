@@ -1,8 +1,6 @@
-# Virusinferno Digital Studio — Website
+# Virusinferno Digital Studio - Website
 
-A React + Tailwind CSS single-page site built for Virusinferno Digital Studio: an app-like splash
-screen, a sticky nav with four sections (Home, Our Services, Available Training, Contact Us),
-and a floating WhatsApp button on every page.
+A dynamic React + Tailwind CSS single-page application built for Virusinferno Digital Studio. It features a sleek glassmorphism design, an app-like splash screen, and a fully functional CMS (Admin Dashboard) for real-time content updates without needing a complex backend.
 
 ## Run it locally
 
@@ -21,68 +19,48 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 npm run build
 ```
 
-This outputs a static site to `dist/`. Deploy `dist/` to any static host — Vercel, Netlify,
-Cloudflare Pages, or straight to `virusinferno.xyz` via your usual hosting/S3 + CloudFront setup.
-
-```bash
-npm run preview   # sanity-check the production build locally
-```
+This outputs a static site to `dist/`. Deploy `dist/` to any static host — Vercel, Netlify, Cloudflare Pages, or straight to `virusinferno.xyz`. (A `vercel.json` file is included to handle React SPA routing).
 
 ## Where things live
 
-```
+```text
 src/
-  assets/logo.webp        Your logo (already wired into the splash, nav, and footer)
-  siteConfig.js           All links & copy: WhatsApp links, nav items, services, training features
-  hooks/useTypewriter.js  Powers the splash screen's boot-sequence text
+  assets/                 Default images (logo.webp, devices-mockup.webp, Oluwasheyi.webp)
+  siteConfig.js           Static links: WhatsApp URLs, social handles, and website URL
+  hooks/useTypewriter.js  Powers the splash screen's boot-sequence typing animation
   components/
-    ui.jsx                Eyebrow, buttons, status chip, background decorations
-    Logo.jsx
-    Navbar.jsx
-    Footer.jsx
-    FloatingWhatsApp.jsx
-    SplashScreen.jsx
+    Navbar.jsx            Top navigation with glassmorphism effects
+    Footer.jsx            Contains the hidden Admin Dashboard lock icon
+    FloatingWhatsApp.jsx  Global floating contact button
+    SplashScreen.jsx      App-like intro screen with dynamic background support
   pages/
-    Home.jsx               <- portrait placeholder lives here, search for "REPLACE WITH"
-    Services.jsx
-    Training.jsx
-    Contact.jsx
-  App.jsx                  Splash + page-switching logic lives here
-tailwind.config.js         Brand colors, fonts, and the flame gradient are defined here
+    Home.jsx              Hero section, dynamic portrait, and scrolling carousel
+    Services.jsx          Dynamic grid of services managed via Admin
+    Training.jsx          Virtual training details and features
+    Contact.jsx           Contact channels and quote CTA
+    Admin.jsx             Command Center for updating CMS data
+  App.jsx                 Master wrapper, routing, and dynamic global background state
+tailwind.config.js        Brand colors, fonts, and custom styling configurations
 ```
 
-## Swap in your portrait
+## Managing Website Content (Admin Dashboard)
 
-Open `src/pages/Home.jsx` and search for the comment `REPLACE WITH OLUWASHEYI'S PORTRAIT HERE`.
-Drop your photo in `src/assets/` (e.g. `portrait.jpg`), import it at the top of the file:
+You no longer need to edit code to update your site's core content! 
+1. Scroll to the very bottom right of the **Footer**.
+2. Click the faint, hidden **Lock Icon** next to the copyright text.
+3. Log in using your secure admin credentials.
+4. From the **Command Center**, you can:
+   * **Manage Services:** Add, edit, or delete the services displayed on the Our Services page.
+   * **Carousel Images:** Upload `.webp` images, titles, and descriptions for the scrolling showcase on the Home page.
+   * **Site Media:** Instantly swap out the Global Background image (`fire-bg.webp`) or your Homepage Portrait.
 
-```js
-import portrait from '../assets/portrait.jpg';
-```
+## Brand Colors
 
-and swap the placeholder `<div>` block for an `<img src={portrait} className="w-full h-full object-cover rounded-3xl" alt="Oluwasheyi Ojelade" />`.
+The site utilizes a premium light glassmorphism aesthetic.
 
-## Updating your logo
-
-Drop a new file into `src/assets/logo.webp` (same filename) and it updates everywhere automatically
-— splash screen, nav bar, and footer all import from that one file via `src/components/Logo.jsx`.
-
-## Editing links, WhatsApp messages, or services
-
-Everything content-related — the WhatsApp links (including the exact required enquiry link), the
-services list, training features, website URL, and X handle — is centralized in `src/siteConfig.js`
-so you never have to hunt across files to update copy.
-
-## Brand colors (tailwind.config.js)
-
-| Token          | Hex       | Use                              |
-|----------------|-----------|-----------------------------------|
-| `void`         | `#060B18` | Page background (deep matte navy) |
-| `panel`        | `#0B1220` | Alternating section background    |
-| `card`         | `#111A2E` | Card surfaces                     |
-| `line`         | `#1E2A47` | Hairline borders                  |
-| `ember-red`    | `#E8291C` | Flame gradient start               |
-| `ember-orange` | `#FF6A00` | Flame gradient middle / accent     |
-| `ember-gold`   | `#FFB020` | Flame gradient end                 |
-| `steel`        | `#8D97AE` | Secondary text                     |
-| `whatsapp`     | `#25D366` | WhatsApp button                    |
+| Element | Colors (Hex) | Use |
+| :--- | :--- | :--- |
+| **Global Background** | `#FFF5F0` to `#FFE8E0` | Soft warm gradient behind the frosted glass. |
+| **Primary Accents** | `#E8291C` to `#FF6A00` | Vibrant flame gradient used on buttons, icons, and text highlights. |
+| **Glass Cards** | `rgba(255,255,255,0.45)` | Backdrop-filtered panels providing the frosted glass aesthetic. |
+| **Dark Text** | `#111827` (Gray-900) | High-contrast text for ultimate readability on light backgrounds. |
