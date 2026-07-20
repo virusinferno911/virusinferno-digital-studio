@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, MessageCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import { WHATSAPP_ENQUIRY_LINK } from '../siteConfig';
-import defaultPortrait from '../assets/Oluwasheyi.png'; 
-import devicesMockup from '../assets/devices-mockup.png';
+import defaultPortrait from '../assets/Oluwasheyi.webp'; 
+import devicesMockup from '../assets/devices-mockup.webp';
 
 export function Home({ onNavigate, onBackToSplash }) {
   const defaultCarouselItems = [

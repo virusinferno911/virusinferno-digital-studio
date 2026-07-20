@@ -32,7 +32,7 @@ npm run preview   # sanity-check the production build locally
 
 ```
 src/
-  assets/logo.png        Your logo (already wired into the splash, nav, and footer)
+  assets/logo.webp        Your logo (already wired into the splash, nav, and footer)
   siteConfig.js           All links & copy: WhatsApp links, nav items, services, training features
   hooks/useTypewriter.js  Powers the splash screen's boot-sequence text
   components/
@@ -64,7 +64,7 @@ and swap the placeholder `<div>` block for an `<img src={portrait} className="w-
 
 ## Updating your logo
 
-Drop a new file into `src/assets/logo.png` (same filename) and it updates everywhere automatically
+Drop a new file into `src/assets/logo.webp` (same filename) and it updates everywhere automatically
 — splash screen, nav bar, and footer all import from that one file via `src/components/Logo.jsx`.
 
 ## Editing links, WhatsApp messages, or services

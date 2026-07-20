@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, X as CloseIcon } from 'lucide-react';
-import logo from '../assets/logo.png'; // Direct import for huge logo sizing
+import logo from '../assets/logo.webp'; // Direct import for huge logo sizing
 import { NAV_ITEMS, WHATSAPP_QUOTE_LINK } from '../siteConfig';
 
 export function Navbar({ page, onNavigate, mobileOpen, setMobileOpen }) {

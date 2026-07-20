@@ -1,6 +1,6 @@
 import React from 'react';
 import { Lock } from 'lucide-react';
-import logo from '../assets/logo.png'; 
+import logo from '../assets/logo.webp'; 
 import { NAV_ITEMS, WEBSITE_URL, X_URL, X_HANDLE } from '../siteConfig';
 
 export function Footer({ onNavigate }) {

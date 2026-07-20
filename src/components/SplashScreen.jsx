@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import logo from '../assets/logo.png'; 
+import logo from '../assets/logo.webp'; 
 import { useTypewriter } from '../hooks/useTypewriter';
 
 export function SplashScreen({ onGetStarted, exiting }) {
@@ -12,7 +12,7 @@ export function SplashScreen({ onGetStarted, exiting }) {
         exiting ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       style={{
-        backgroundImage: "url('/splash-bg.png')", 
+        backgroundImage: "url('/splash-bg.webp')", 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'

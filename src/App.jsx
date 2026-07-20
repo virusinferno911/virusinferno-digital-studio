@@ -18,7 +18,7 @@ export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   
   // State for dynamic global background
-  const [globalBg, setGlobalBg] = useState('/fire-bg.png'); // Default
+  const [globalBg, setGlobalBg] = useState('/fire-bg.webp'); // Default
 
   // Update background when navigating between pages
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function App() {
     if (customBg) {
       setGlobalBg(customBg);
     } else {
-      setGlobalBg('/fire-bg.png');
+      setGlobalBg('/fire-bg.webp');
     }
   }, [displayPage]);
 

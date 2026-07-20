@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, LayoutDashboard, ImagePlus, LogOut, UploadCloud, Trash2, Settings, Plus } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 
 export function Admin({ onNavigate }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
